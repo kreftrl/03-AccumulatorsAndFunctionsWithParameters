@@ -49,7 +49,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 #
 #          -- Write the names of three INSTANCE VARIABLEs that Circle
 #             objects have:
-#                the center point which is rg.Point with two variables x,y and the variable of radius
+#                the center point and the variable of radius and fill color
 #
 #     f. What does a RoseWindow RENDER method do?
 #            draw all objects attached to the window
