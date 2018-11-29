@@ -21,7 +21,7 @@ def main():
     run_test_fancy_sums_of_digits()
 
     # -------------------------------------------------------------------------
-    # TODO: 9. DO THIS LAST!
+    # DONE: 9. DO THIS LAST!
     #    -- Uncomment the line of code below to run the main function
     #         in m4t_tester.py (do not make changes to it).
     #         It runs OUR tests on your code.
@@ -32,7 +32,7 @@ def main():
     #       ** Ask a TA or your professor for help in that case. **
     # -------------------------------------------------------------------------
 
-    # m4t_tester.main()
+    m4t_tester.main()
 
 
 def run_test_sum_of_digits():
@@ -124,7 +124,7 @@ def sum_of_digits(number):
 def run_test_digits_in_cube():
     """ Tests the   digits_in_cube   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function.
+    # DONE: 3. Implement this function.
     #   It TESTS the  digits_in_cube  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -148,19 +148,34 @@ def run_test_digits_in_cube():
     print('-----------------------------------------------------')
     print('Testing the   digits_in_cube   function:')
     print('-----------------------------------------------------')
-
+    # Test 1:
+    expected = 8
+    answer = digits_in_cube(5)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+    # Test 2:
+    expected = 9
+    answer = digits_in_cube(3)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+    # Test 3:
+    expected = 1
+    answer = digits_in_cube(10)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
 
 def digits_in_cube(n):
-    """
-    What comes in:  A positive integer.
-    What goes out:  The sum of the digits in the CUBE of the integer.
-    Side effects:   None.
-    Example:
-      If the integer (n) is 5    (so n cubed is 125),
-      this function returns (1 + 2 + 5), which is 8.
-    """
+    return sum_of_digits(n**3)
+    #"""
+    #What comes in:  A positive integer.
+    #What goes out:  The sum of the digits in the CUBE of the integer.
+    #Side effects:   None.
+    #Example:
+    #  If the integer (n) is 5    (so n cubed is 125),
+    #  this function returns (1 + 2 + 5), which is 8.
+    #"""
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -174,7 +189,7 @@ def digits_in_cube(n):
 def run_test_digits_in_power():
     """ Tests the   digits_in_power   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this function.
+    # DONE: 5. Implement this function.
     #   It TESTS the  digits_in_power  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -184,21 +199,36 @@ def run_test_digits_in_power():
     print('--------------------------------------------------')
     print('Testing the   digits_in_power   function:')
     print('--------------------------------------------------')
-
+    # Test 1:
+    expected = 7
+    answer = digits_in_power(5,2)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+    # Test 2:
+    expected = 8
+    answer = digits_in_power(5,3)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+    # Test 3:
+    expected = 18
+    answer = digits_in_power(12,3)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
 
 def digits_in_power(n, k):
-    """
-    What comes in:  Two positive integers, n and k.
-    What goes out:
-      The sum of the digits in x, where x is n raised to the kth power.
-    Side effects:   None.
-    Example:
-      If the arguments are 12 and 3, respectively,
-      this function returns 18
-      since 12 to the 3rd power is 1728 (whose digits sum to 18).
-    """
+    return sum_of_digits(n**k)
+    #"""
+    #What comes in:  Two positive integers, n and k.
+    #What goes out:
+    #  The sum of the digits in x, where x is n raised to the kth power.
+    #Side effects:   None.
+    #Example:
+    #  If the arguments are 12 and 3, respectively,
+    #  this function returns 18
+    #  since 12 to the 3rd power is 1728 (whose digits sum to 18).
+    #"""
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #
     ###########################################################################
     # IMPORTANT: CALL, as many times as needed,
@@ -210,7 +240,7 @@ def digits_in_power(n, k):
 def run_test_fancy_sums_of_digits():
     """ Tests the   fancy_sums_of_digits   function. """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement this function.
+    # DONE: 7. Implement this function.
     #   It TESTS the  fancy_sums_of_digits  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -221,7 +251,21 @@ def run_test_fancy_sums_of_digits():
     print('--------------------------------------------------')
     print('Testing the   fancy_sums_of_digits   function:')
     print('--------------------------------------------------')
-
+    # Test 1:
+    expected = 1
+    answer = fancy_sums_of_digits(10)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+    # Test 2:
+    expected = 124309
+    answer = fancy_sums_of_digits(35)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+    # Test 3:
+    expected = 19084
+    answer = fancy_sums_of_digits(2)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
     # -------------------------------------------------------------------------
     # HINT:  For your 1st test, consider  n=10.  Figure out BY HAND
     # the correct (expected) answer for that test case.  (It's easy.)
@@ -232,31 +276,33 @@ def run_test_fancy_sums_of_digits():
 
 
 def fancy_sums_of_digits(n):
-    """
-    What comes in:  A positive integer n.
-    What goes out:
-      -- Let X denote the   sum   of the digits in (n ** 1000).
-      -- Let Y denote the   sum   of the digits in (n ** 999).
-      This function RETURNs the sum of the digits in (X ** Y).
-    Side effects:   None.
-    Examples:
-      -- If n is 2, then:
-            -- the   sum   of the digits in n ** 1000 is 1366 (trust me!).
-            -- the   sum   of the digits in n ** 999 is 1367 (trust me!).
-            -- so X ** Y is VERY LARGE in this case
-                     (don't try to print it!)
-            -- the   sum   of the digits in (X ** Y) is 19084 (trust me!)
-            -- so this function returns 19084.
-      -- If n is 35, then:
-            -- the sum of the digits in n ** 1000 is 7021 (trust me!).
-            -- the sum of the digits in n ** 999 is 7145 (trust me!).
-            -- so X ** Y is VERY LARGE in this case
-                     (don't try to print it!)
-            -- the sum of the digits in (X ** Y) is 124309 (trust me!)
-            -- so this function returns 124309.
-    """
+    X = sum_of_digits(n**1000)
+    Y = sum_of_digits(n**999)
+    return sum_of_digits(X**Y)
+    #"""
+    #What comes in:  A positive integer n.
+    #What goes out:
+    #  -- Let X denote the   sum   of the digits in (n ** 1000).
+    # This function RETURNs the sum of the digits in (X ** Y).
+    #Side effects:   None.
+    #Examples:
+    #  -- If n is 2, then:
+    #        -- the   sum   of the digits in n ** 1000 is 1366 (trust me!).
+    #        -- the   sum   of the digits in n ** 999 is 1367 (trust me!).
+    #        -- so X ** Y is VERY LARGE in this case
+    #                (don't try to print it!)
+    #        -- the   sum   of the digits in (X ** Y) is 19084 (trust me!)
+    #        -- so this function returns 19084.
+    #  -- If n is 35, then:
+    #        -- the sum of the digits in n ** 1000 is 7021 (trust me!).
+    #        -- the sum of the digits in n ** 999 is 7145 (trust me!).
+    #       -- so X ** Y is VERY LARGE in this case
+    #                 (don't try to print it!)
+    #        -- the sum of the digits in (X ** Y) is 124309 (trust me!)
+    #        -- so this function returns 124309.
+    #"""
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # DONE: 8. Implement and test this function.
     #
     ###########################################################################
     # IMPORTANT: CALL, as many times as needed,
