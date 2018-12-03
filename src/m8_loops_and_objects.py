@@ -95,8 +95,8 @@ def print_sequence2():
     print('--------------------------------------------------')
     print('Running print_sequence2:')
     print('--------------------------------------------------')
-    for k in range(35):
-        print(k*10+50)
+    for k in range(18):
+        print(k*20+50)
 
 def draw_circles2():
     """
